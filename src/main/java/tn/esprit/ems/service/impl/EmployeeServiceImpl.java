@@ -34,6 +34,11 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
+    public void deleteEmployee(Long id) {
+        employeeRepository.deleteById(id);
+    }
+
+    @Override
     public List<EmployeeDto> getAll() {
         List<Employee> employees = employeeRepository.findAll();
         return employees.stream()
