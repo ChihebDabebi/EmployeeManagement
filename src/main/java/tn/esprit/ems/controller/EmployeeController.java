@@ -8,6 +8,8 @@ import tn.esprit.ems.entity.Employee;
 import tn.esprit.ems.service.EmployeeService;
 import tn.esprit.ems.service.impl.EmployeeServiceImpl;
 
+import java.util.List;
+
 
 @RestController
 @RequestMapping("/api/employees")
@@ -27,5 +29,10 @@ public class EmployeeController {
     public ResponseEntity<EmployeeDto> getEmployeeById(@PathVariable Long id ){
         EmployeeDto employeeById = employeeService.getEmployeeById(id);
         return new ResponseEntity<>(employeeById,HttpStatus.ACCEPTED);
+    }
+    @GetMapping
+    public ResponseEntity<List<EmployeeDto>> getEmployees(){
+        return new ResponseEntity<>(employeeService.getAll(),HttpStatus.ACCEPTED);
+
     }
 }
