@@ -1,5 +1,6 @@
 package tn.esprit.ems.mapper;
 
+import tn.esprit.ems.dto.DepartementDto;
 import tn.esprit.ems.dto.EmployeeDto;
 import tn.esprit.ems.entity.Employee;
 
@@ -10,7 +11,8 @@ public class EmployeeMapper {
                 employee.getId(),
                 employee.getFirstName(),
                 employee.getLastName(),
-                employee.getEmail()
+                employee.getEmail(),
+                employee.getDepartement()
         );
     }
 
@@ -19,7 +21,9 @@ public class EmployeeMapper {
                 employeeDto.getId(),
                 employeeDto.getFirstName(),
                 employeeDto.getLastName(),
-                employeeDto.getEmail()
+                employeeDto.getEmail(),
+                employeeDto.getDepartement()
+
         );
     }
 }

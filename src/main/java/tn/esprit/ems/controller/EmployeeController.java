@@ -30,7 +30,7 @@ public class EmployeeController {
         EmployeeDto employeeById = employeeService.getEmployeeById(id);
         return new ResponseEntity<>(employeeById,HttpStatus.ACCEPTED);
     }
-    @GetMapping
+    @GetMapping("/employees")
     public ResponseEntity<List<EmployeeDto>> getEmployees(){
         return new ResponseEntity<>(employeeService.getAll(),HttpStatus.ACCEPTED);
 
